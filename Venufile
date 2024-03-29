@@ -8,7 +8,7 @@ stages {
 stage('Git Checkout') {
  steps {
    echo 'This is for cloning gitrepo'
-   git branch: '*/main', url: 'https://github.com/venugopal-aadi/insure_me.git'
+   git branch: 'main', url: 'https://github.com/venugopal-aadi/insure_me.git'
                        }
 }
 stage('Create Package') {
