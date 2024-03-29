@@ -29,7 +29,7 @@ sh 'docker build -t venu02/insure-me-proj:1.0 .'
 
 stage('Login to Dockerhub') {
       steps {
-withCredentials([usernamePassword(credentialsId: 'dockelogin', passwordVariable: 'venu-dockerpass2', usernameVariable: 'venu-dockeruser2')]) {
+withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'venu-dockerpass2', usernameVariable: 'venu-dockeruser2')]) {
     sh 'docker login -u ${venu-dockeruser2} -p ${venu-dockerpass2}'
 }
 }
