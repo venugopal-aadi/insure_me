@@ -4,3 +4,13 @@ pipeline {
   tools {
     maven 'M2_HOME'
     }
+stages {
+stage('Git Checkout') {
+   echo 'This is for cloning gitrepo'
+   git branch: '*/main', url: 'https://github.com/venugopal-aadi/insure_me.git'
+}
+stage('Create Package') {
+  sh 'mvn package' 
+}
+}
+}
