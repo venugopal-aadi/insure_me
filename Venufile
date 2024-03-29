@@ -23,7 +23,7 @@ publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, 
 }
 stage('Create a Docker image from the Package Insure-Me.jar file') {
       steps {
-sh 'docker build -t venu02/insure-me-proj .'
+sh 'docker build -t venu02/insure-me-proj:1.0 .'
       }
 }
 }
