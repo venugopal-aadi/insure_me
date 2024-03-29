@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  tools {
+  tools{
     maven 'M2_HOME'
     }
 stages {
@@ -9,12 +9,12 @@ stage('Git Checkout') {
  steps {
    echo 'This is for cloning gitrepo'
    git branch: '*/main', url: 'https://github.com/venugopal-aadi/insure_me.git'
-}
+                       }
 }
 stage('Create Package') {
  steps {
   sh 'mvn package' 
-}
+                        }
 }
 }
 }
