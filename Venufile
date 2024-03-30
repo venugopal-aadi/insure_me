@@ -29,7 +29,7 @@ sh 'docker build -t venu02/insure-me-proj:1.0 .'
 
 stage('Login to Dockerhub') {
       steps {
-     sh 'docker login username:venu02 password:Samba$002'
+     sh 'docker login username: venu02 password: Samba$002'
 
 }
 }
