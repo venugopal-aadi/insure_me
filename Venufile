@@ -29,8 +29,10 @@ sh 'docker build -t venu02/insure-me-proj:1.0 .'
 
 stage('Login to Dockerhub') {
       steps {
-    withCredentials([usernamePassword(credentialsId: 'venu2-login', passwordVariable: 'venu2-pass', usernameVariable: 'venu2-user')]) {
-    sh 'docker login -u ${venu2-user} -p ${venu2-pass}'
+    withCredentials([usernamePassword(credentialsId: 'dockelogin', passwordVariable: 'dockerpasswd', usernameVariable: 'dockeruser')]) {
+    sh 'docker login -u ${dockeruser} -p ${dockerpasswd}'
+}
+   
                                                       }
         
 
@@ -42,10 +44,10 @@ stage('Push the Docker image') {
         sh 'docker push venu02/insure-me-proj:1.0'
                                 }
             }
-stage('Ansbile config and Deployment') {
-      steps {
-ansiblePlaybook credentialsId: 'venu-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
-}
-}
+//stage('Ansbile config and Deployment') {
+  //    steps {
+//ansiblePlaybook credentialsId: 'venu-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
+//}
+//}
 }
 }
