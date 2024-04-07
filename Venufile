@@ -36,8 +36,7 @@ stage('Login to Dockerhub') {
                                                       }
         
 
-}
-}
+
  
 stage('Push the Docker image') {
       steps {
