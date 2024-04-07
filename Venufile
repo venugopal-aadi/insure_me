@@ -29,8 +29,8 @@ sh 'docker build -t venu02/insure-me-proj:1.0 .'
 
 stage('Login to Dockerhub') {
       steps {
-    withCredentials([usernamePassword(credentialsId: 'vg-docker-login', passwordVariable: 'vg-dockerpass', usernameVariable: 'vg-dockeruser')]) {
-    sh 'docker login -u ${vg-dockeruser} -p ${vg-dockerpass}'
+    
+    sh 'docker login -u venu02 -p venu12345'
 }
    
                                                       }
