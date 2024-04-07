@@ -29,9 +29,9 @@ stage('Publish the HTML Reports') {
  }
   stage('Login to Dockerhub') {
       steps {
-withCredentials([usernamePassword(credentialsId: 'v-dockerlogin', passwordVariable: 'v-docker-pswd', usernameVariable: 'v-docker-user')]) {
-sh 'docker login -u ${v-docker-user} -p ${v-docker-pswd}'
-} 
+
+sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+
       }
   }
         
