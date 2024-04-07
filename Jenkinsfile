@@ -20,7 +20,7 @@ stage('Publish the HTML Reports') {
       steps {
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/venu_proj/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         
-}
+}docker 
 }
  stage('Create a Docker image from the Package Insure-Me.jar file') {
       steps {
@@ -30,7 +30,7 @@ stage('Publish the HTML Reports') {
   stage('Login to Dockerhub') {
       steps {
 
-sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+sh 'docker login -u venu02 -p Samba$002'
 
       }
   }
