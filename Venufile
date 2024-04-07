@@ -34,7 +34,7 @@ stage('Login to Dockerhub') {
 }
    
                                                       }
-        
+        }
 
 
  
@@ -43,10 +43,10 @@ stage('Push the Docker image') {
         sh 'docker push venu02/insure-me-proj:1.0'
                                 }
             }
-//stage('Ansbile config and Deployment') {
-  //    steps {
-//ansiblePlaybook credentialsId: 'venu-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
-//}
-//}
+stage('Ansbile config and Deployment') {
+      steps {
+ansiblePlaybook credentialsId: 'venu-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
+}
+}
 }
 }
