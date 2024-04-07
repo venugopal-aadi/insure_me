@@ -33,8 +33,7 @@ stage('Login to Dockerhub') {
     sh 'docker login -u venu02 -p venu12345'
 }
    
-                                                      }
-        }
+             }
 
 
  
@@ -46,6 +45,7 @@ stage('Push the Docker image') {
 stage('Ansbile config and Deployment') {
       steps {
 ansiblePlaybook credentialsId: 'venu-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ' '
+}
 }
 }
 }
