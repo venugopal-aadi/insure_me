@@ -30,7 +30,7 @@ stage('Publish the HTML Reports') {
   stage('Login to Dockerhub') {
       steps {
 
-sh 'docker login -u venu02 -p Samba$002'
+sh 'docker login -u $venu02 -p $Samba$002'
 
       }
   }
